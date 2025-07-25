@@ -19,7 +19,10 @@ public class CorsConfg {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
-                        .allowedOrigins("http://localhost:5500") // Your frontend port
+                        .allowedOrigins(
+                            "http://localhost:5500",  // Local development
+                            "https://igunzanick.github.io"  // Deployed frontend
+                        )
                         .allowedMethods("*")
                         .allowedHeaders("*")
                         .allowCredentials(true);
