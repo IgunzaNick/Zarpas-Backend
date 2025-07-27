@@ -3,12 +3,14 @@ package com.zarpas_safaris.controller;
 
 import com.zarpas_safaris.Daos.BookingRequest;
 import com.zarpas_safaris.Daos.BookingResponse;
+import com.zarpas_safaris.model.Booking;
 import com.zarpas_safaris.service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/bookings")
@@ -24,5 +26,11 @@ public class BookingController {
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Booking>> getAllBookings() {
+        List<Booking> bookings = bookingService.getAllBookings();
+        return ResponseEntity.ok(bookings);
     }
 }

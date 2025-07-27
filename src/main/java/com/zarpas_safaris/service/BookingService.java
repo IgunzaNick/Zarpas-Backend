@@ -7,6 +7,8 @@ import com.zarpas_safaris.repository.BookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BookingService {
     @Autowired
@@ -43,6 +45,10 @@ public class BookingService {
         response.setMessage("Booking created successfully. Confirmation email sent.");
 
         return response;
+    }
+
+    public List<Booking> getAllBookings() {
+        return bookingRepository.findAll();
     }
 
     private void sendConfirmationEmails(Booking booking) {
