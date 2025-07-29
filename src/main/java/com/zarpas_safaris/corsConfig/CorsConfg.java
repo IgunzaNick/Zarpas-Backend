@@ -21,7 +21,7 @@ public class CorsConfg {
                 registry.addMapping("/api/**")
                         .allowedOrigins(
                             "http://localhost:5500",  // Local development
-                            "https://igunzanick.github.io"  // Deployed frontend
+                                "https://www.zarpasafricanasafaris.com/"  // Deployed frontend
                         )
                         .allowedMethods("*")
                         .allowedHeaders("*")

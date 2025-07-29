@@ -6,7 +6,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://dpg-d21o897diees73e1vlhg-a.oregon-postgres.render.com/zarpas
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://dpg-d21o897diees73e1vlhg-a/zarpas
       - SPRING_DATASOURCE_USERNAME=zarpas_user
       - SPRING_DATASOURCE_PASSWORD=1JvEF5280asP6pxeqYvd8Zs0VaKZqGFR
     depends_on:
